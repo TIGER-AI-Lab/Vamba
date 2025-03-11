@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="We propose VISTA, a video spatiotemporal augmentation method that generates long-duration and high-resolution video instruction-following data to enhance the video understanding capabilities of video LMMs.">
+    <meta property="og:title" content="VISTA: Enhancing Long-Duration and High-Resolution Video Understanding by VIdeo SpatioTemporal Augmentation" />
+    <meta property="og:description" content="We propose VISTA, a video spatiotemporal augmentation method that generates long-duration and high-resolution video instruction-following data to enhance the video understanding capabilities of video LMMs." />
+    <meta property="og:url" content="https://tiger-ai-lab.github.io/Vamba/" />
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta property="og:image" content="static/images/vista_teaser.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+
+    <meta name="twitter:title" content="VISTA: Enhancing Long-Duration and High-Resolution Video Understanding by VIdeo SpatioTemporal Augmentation">
+    <meta name="twitter:description" content="We propose VISTA, a video spatiotemporal augmentation method that generates long-duration and high-resolution video instruction-following data to enhance the video understanding capabilities of video LMMs.">
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+    <meta name="twitter:image" content="static/images/vista_teaser.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Keywords for your paper to be indexed by-->
+    <meta name="keywords" content="vista">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>VISTA</title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦉</text></svg>"> -->
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="static/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="static/js/jquery-3.5.1.js"></script>
+    <script type="text/javascript" charset="utf8" src="static/js/jquery.dataTables.js"></script>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">
+                          <span style="color: #0077BE;">VISTA</span>: Enhancing Long-Duration and High-Resolution Video Understanding by <span style="color: #0077BE;">VI</span>deo <span style="color: #0077BE;">S</span>patio<span style="color: #0077BE;">T</span>emporal <span style="color: #0077BE;">A</span>ugmentation
+                        </h1>
+                        <div class="is-size-5 publication-authors">
+                            <!-- Paper authors -->
+                            <span class="author-block">
+                                <a href="https://cs.uwaterloo.ca/~w2ren" target="_blank">Weiming Ren</a><sup>1,2,3</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://hyang0511.github.io/" target="_blank">Huan Yang</a><sup>3</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://www.linkedin.com/in/jiemin888/" target="_blank">Jie Min</a><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://congwei1230.github.io/" target="_blank">Cong Wei</a><sup>1,2</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://wenhuchen.github.io/" target="_blank">Wenhu Chen</a><sup>1,2</sup>
+                            </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                            <sup>1</sup>University of Waterloo,
+                            <sup>2</sup>Vector Institute,
+                            <sup>3</sup>01.AI
+                            </span>
+                            <span class="author-block">
+                                <small>
+                                    w2ren@uwaterloo.ca,
+                                    hyang@fastmail.com,
+                                    wenhuchen@uwaterloo.ca
+                                </small>
+                            </span>
+
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- ArXiv abstract Link -->
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/abs/2412.00927" target="_blank"
+                                      class="external-link button is-normal is-rounded is-dark">
+                                          <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                          </span>
+                                    <span>arXiv</span>
+                                    </a>
+                                    </span>
+
+                                <span class="link-block">
+                                    <a href="https://huggingface.co/collections/TIGER-Lab/vista-674a2f0fab81be728a673193" target="_blank"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                          🤗
+                                        </span>
+                                        <span>Models</span>
+                                    </a>
+                                </span>
+
+                                <!-- Github link -->
+                                <span class="link-block">
+                                  <a href="https://github.com/TIGER-AI-Lab/VISTA" target="_blank"
+                                  class="external-link button is-normal is-rounded is-dark">
+                                  <span class="icon">
+                                    <i class="fab fa-github"></i>
+                                  </span>
+                                      <span>Code</span>
+                                  </a>
+                                </span>
+
+                                <!-- Dataset link -->
+                                <span class="link-block">
+                                    <a href="https://huggingface.co/datasets/TIGER-Lab/VISTA-400K" target="_blank"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-database"></i>
+                                        </span>
+                                        <span>VISTA-400K</span>
+                                    </a>
+                                </span>
+
+                                <span class="link-block">
+                                  <a href="https://huggingface.co/datasets/TIGER-Lab/HRVideoBench" target="_blank"
+                                  class="external-link button is-normal is-rounded is-dark">
+                                      <span class="icon">
+                                          <i class="fas fa-vial"></i>
+                                      </span>
+                                      <span>HRVideoBench</span>
+                                  </a>
+                              </span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h1 class="title is-2">Abstract</h1>
+            <div class="content has-text-justified">
+                            <p>Current large multimodal models (LMMs) face significant challenges in processing and comprehending long-duration or high-resolution videos, which is mainly due to the lack of high-quality datasets. To address this issue from a data-centric perspective, we propose VISTA, a simple yet effective VIdeo SpatioTemporal Augmentation framework that synthesizes long-duration and high-resolution video instruction-following pairs from existing video-caption datasets. VISTA spatially and temporally combines videos to create new synthetic videos with extended durations and enhanced resolutions, and subsequently produces question-answer pairs pertaining to these newly synthesized videos. Based on this paradigm, we develop seven video augmentation methods and curate VISTA-400K, a video instruction-following dataset aimed at enhancing long-duration and high-resolution video understanding. Finetuning various video LMMs on our data resulted in an average improvement of 3.3% across four challenging benchmarks for long-video understanding. Furthermore, we introduce the first comprehensive high-resolution video understanding benchmark HRVideoBench, on which our finetuned models achieve a 6.5% performance gain. These results highlight the effectiveness of our framework.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Image carousel -->
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-full">
+                        <div class="item">
+                            <!-- Your image here -->
+                            <img src="static/images/vista_teaser.png" alt="VISTA" style="width: 80%; display: block; margin-left: auto; margin-right: auto;"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End image carousel -->
+
+
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h1 class="title is-1">VISTA</h1>
+            <div class="content has-text-justified">
+              <p>
+                VISTA leverages insights from image and video classification data augmentation techniques such as CutMix, MixUp and VideoMix, which demonstrate that training on synthetic data created by overlaying or mixing multiple images or videos results in more robust classifiers. Similarly, our method spatially and temporally combines videos to create (artificial) augmented video samples with longer durations and higher resolutions, followed by synthesizing instruction data based on these new videos. Our data synthesis pipeline utilizes existing public video-caption datasets, making it fully open-sourced and scalable. This allows us to construct VISTA-400K, a high-quality video instruction-following dataset aimed at improving the long and high-resolution video understanding capabilities of video LMMs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+        <!-- Image carousel -->
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-full">
+                        <div class="item">
+                            <!-- Your image here -->
+                            <img src="static/images/vista_main.png" alt="VISTA" />
+<!--                            <h2 class="subtitle">-->
+<!--                            </h2>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End image carousel -->
+
+
+
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h1 class="title is-1">HRVideoBench</h1>
+            <div class="content has-text-justified">
+              <p>
+                We observe that existing video understanding benchmarks are inadequate for accurately assessing the ability of video LMMs to understand high-resolution videos, especially the details inside the videos. Prior benchmarks mainly consist of low-resolution videos. More recent benchmarks focus on evaluating the long video understanding capability of video LMMs, which contain questions that typically pertain to a short segment in the long video. As a result, a model's high-resolution video understanding performance can be undermined if it struggles to sample or retrieve the relevant frames from a lengthy video sequence.<br><br>
+                To address this gap, we introduce HRVideoBench, a comprehensive benchmark with 200 multiple-choice questions designed to assess video LMMs for high-resolution video understanding. HRVideoBench focuses on the perception and understanding of small regions and subtle actions in the video. Our test videos are at least 1080p and contain 10 different video types collected with real-world applications in mind. For example, key applications of high-resolution video understanding include autonomous driving and video surveillance. We correspondingly collect POV driving videos and CCTV footage for the benchmark. Our benchmark consists of 10 types of questions, all of which are manually annotated and can be broadly categorized into object and action-related tasks. Examples of HRVideoBench questions are shown in the figure below.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-full">
+                        <div class="item">
+                            <!-- Your image here -->
+                            <img src="static/images/hrvideobench_examples.png" alt="HRVideoBench" style="width: 100%; display: block; margin-left: auto; margin-right: auto;"/>
+                           <h2 class="subtitle" style="text-align: center;">Examples of HRVideoBench questions.</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <h1 class="title is-1">Finetuning Video LMMs on VISTA-400K</h1>
+              <div class="content has-text-justified">
+              <p>
+                To validate the effectiveness of VISTA-400K, we finetune a diverse set of LMMs on our dataset. Specifically, we choose VideoLLaVA, Mantis-Idefics2 and LongVA as the base models because these models disclose details about their training dataset. Our evaluation results on long and high-resolution video understanding benchmarks indicate that our dataset provides a consistent improvement across all models. Evaluation results on short video understanding benchmarks and open-ended video QA benchmarks also demonstrate that our dataset maintains the performance of video LMMs on a wide range of video understanding tasks. Finally, our ablation study results show that each subset in our dataset is essential for improving the performance of video LMMs, and disabling our proposed video augmentation method leads to a performance drop for both long and high-resolution video understanding tasks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered is-fifths-fifths">
+                        <!-- <h2 class="title is-3">Top 5 Candidates Retrieved from M-BEIR</h2> -->
+                        <div class="content has-text-justified">
+                            <div class="buttonGroup"  data-target-display="#imageDisplayArea2" style="margin-bottom: 2em;">
+                                <button value="long_short" data-img-path="static/images/long_short.png">Long/Short Video Understanding Benchmark Results</button>
+                                <button value="hr_open" data-img-path="static/images/hr_open.png">HRVideoBench/Open-Ended Video QA Results</button>
+                                <button value="case" data-img-path="static/images/case.png">Case Study</button>
+                            </div>
+
+                            <div id="imageDisplayArea2">
+                                <img id="displayedImage2" src="static/images/long_short.png" alt="long_short" />
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <!-- BibTex citation -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">Reference</h2>
+            Please kindly cite our paper if you use our code, data, models or results:
+            <br><br>
+            <pre><code>@misc{ren2024vistaenhancinglongdurationhighresolution,
+      title={VISTA: Enhancing Long-Duration and High-Resolution Video Understanding by Video Spatiotemporal Augmentation}, 
+      author={Weiming Ren and Huan Yang and Jie Min and Cong Wei and Wenhu Chen},
+      year={2024},
+      eprint={2412.00927},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2412.00927}, 
+}</code></pre>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+
+                        <p>
+                            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a>                            project page. You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"
+                                target="_blank">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<style>
+    .buttonGroup {
+        text-align: center;
+    }
+    
+    .buttonGroup>button {
+        padding: 15px;
+        color: white;
+        background-color: #363636;
+        border-radius: 5px;
+    }
+    
+    .buttonGroup>button:hover {
+        box-shadow: 5px;
+    }
+</style>
+
+</html>
