@@ -5,27 +5,27 @@
     <meta charset="utf-8">
     <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
     <!-- Replace the content tag with appropriate information -->
-    <meta name="description" content="We propose VISTA, a video spatiotemporal augmentation method that generates long-duration and high-resolution video instruction-following data to enhance the video understanding capabilities of video LMMs.">
-    <meta property="og:title" content="VISTA: Enhancing Long-Duration and High-Resolution Video Understanding by VIdeo SpatioTemporal Augmentation" />
-    <meta property="og:description" content="We propose VISTA, a video spatiotemporal augmentation method that generates long-duration and high-resolution video instruction-following data to enhance the video understanding capabilities of video LMMs." />
+    <meta name="description" content="We propose Vamba, a hybrid Mamba-Transformer model that leverages cross-attention layers and Mamba-2 blocks for efficient hour-long video understanding.">
+    <meta property="og:title" content="Vamba: Understanding Hour-Long Videos with Hybrid Mamba-Transformers" />
+    <meta property="og:description" content="We propose Vamba, a hybrid Mamba-Transformer model that leverages cross-attention layers and Mamba-2 blocks for efficient hour-long video understanding." />
     <meta property="og:url" content="https://tiger-ai-lab.github.io/Vamba/" />
     <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-    <meta property="og:image" content="static/images/vista_teaser.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content="static/images/vamba_teaser.png" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="600" />
 
 
-    <meta name="twitter:title" content="VISTA: Enhancing Long-Duration and High-Resolution Video Understanding by VIdeo SpatioTemporal Augmentation">
-    <meta name="twitter:description" content="We propose VISTA, a video spatiotemporal augmentation method that generates long-duration and high-resolution video instruction-following data to enhance the video understanding capabilities of video LMMs.">
+    <meta name="twitter:title" content="Vamba: Understanding Hour-Long Videos with Hybrid Mamba-Transformers">
+    <meta name="twitter:description" content="We propose Vamba, a hybrid Mamba-Transformer model that leverages cross-attention layers and Mamba-2 blocks for efficient hour-long video understanding.">
     <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-    <meta name="twitter:image" content="static/images/vista_teaser.png">
+    <meta name="twitter:image" content="static/images/vamba_teaser.png">
     <meta name="twitter:card" content="summary_large_image">
     <!-- Keywords for your paper to be indexed by-->
-    <meta name="keywords" content="vista">
+    <meta name="keywords" content="vamba">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>VISTA</title>
+    <title>Vamba</title>
     <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
     <!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦉</text></svg>"> -->
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
@@ -56,21 +56,24 @@
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
                         <h1 class="title is-1 publication-title">
-                          <span style="color: #0077BE;">VISTA</span>: Enhancing Long-Duration and High-Resolution Video Understanding by <span style="color: #0077BE;">VI</span>deo <span style="color: #0077BE;">S</span>patio<span style="color: #0077BE;">T</span>emporal <span style="color: #0077BE;">A</span>ugmentation
+                          Vamba: Understanding Hour-Long Videos with Hybrid Mamba-Transformers
                         </h1>
                         <div class="is-size-5 publication-authors">
                             <!-- Paper authors -->
                             <span class="author-block">
-                                <a href="https://cs.uwaterloo.ca/~w2ren" target="_blank">Weiming Ren</a><sup>1,2,3</sup>,
+                                <a href="https://cs.uwaterloo.ca/~w2ren" target="_blank">Weiming Ren</a><sup>1,4</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://iamtonymwt.github.io/" target="_blank">Wentao Ma</a><sup>2</sup>,
                             </span>
                             <span class="author-block">
                                 <a href="https://hyang0511.github.io/" target="_blank">Huan Yang</a><sup>3</sup>,
                             </span>
                             <span class="author-block">
-                                <a href="https://www.linkedin.com/in/jiemin888/" target="_blank">Jie Min</a><sup>1</sup>,
+                                <a href="https://congwei1230.github.io/" target="_blank">Cong Wei</a><sup>1,4</sup>,
                             </span>
                             <span class="author-block">
-                                <a href="https://congwei1230.github.io/" target="_blank">Cong Wei</a><sup>1,2</sup>,
+                                <a href="https://scholar.google.com/citations?hl=en&user=qyTrq4kAAAAJ" target="_blank">Ge Zhang</a><sup>1,5</sup>,
                             </span>
                             <span class="author-block">
                                 <a href="https://wenhuchen.github.io/" target="_blank">Wenhu Chen</a><sup>1,2</sup>
@@ -80,13 +83,14 @@
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
                             <sup>1</sup>University of Waterloo,
-                            <sup>2</sup>Vector Institute,
-                            <sup>3</sup>01.AI
+                            <sup>2</sup>University of Toronto,
+                            <sup>3</sup>01.AI,
+                            <sup>4</sup>Vector Institute,
+                            <sup>5</sup>M-A-P
                             </span>
                             <span class="author-block">
                                 <small>
                                     w2ren@uwaterloo.ca,
-                                    hyang@fastmail.com,
                                     wenhuchen@uwaterloo.ca
                                 </small>
                             </span>
@@ -97,7 +101,7 @@
                             <div class="publication-links">
                                 <!-- ArXiv abstract Link -->
                                 <span class="link-block">
-                                    <a href="https://arxiv.org/abs/2412.00927" target="_blank"
+                                    <a href="https://arxiv.org/" target="_blank"
                                       class="external-link button is-normal is-rounded is-dark">
                                           <span class="icon">
                                             <i class="ai ai-arxiv"></i>
@@ -107,18 +111,18 @@
                                     </span>
 
                                 <span class="link-block">
-                                    <a href="https://huggingface.co/collections/TIGER-Lab/vista-674a2f0fab81be728a673193" target="_blank"
+                                    <a href="https://huggingface.co/TIGER-Lab/Vamba" target="_blank"
                                     class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                           🤗
                                         </span>
-                                        <span>Models</span>
+                                        <span>Model</span>
                                     </a>
                                 </span>
 
                                 <!-- Github link -->
                                 <span class="link-block">
-                                  <a href="https://github.com/TIGER-AI-Lab/VISTA" target="_blank"
+                                  <a href="https://github.com/TIGER-AI-Lab/Vamba" target="_blank"
                                   class="external-link button is-normal is-rounded is-dark">
                                   <span class="icon">
                                     <i class="fab fa-github"></i>
@@ -126,27 +130,6 @@
                                       <span>Code</span>
                                   </a>
                                 </span>
-
-                                <!-- Dataset link -->
-                                <span class="link-block">
-                                    <a href="https://huggingface.co/datasets/TIGER-Lab/VISTA-400K" target="_blank"
-                                    class="external-link button is-normal is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fas fa-database"></i>
-                                        </span>
-                                        <span>VISTA-400K</span>
-                                    </a>
-                                </span>
-
-                                <span class="link-block">
-                                  <a href="https://huggingface.co/datasets/TIGER-Lab/HRVideoBench" target="_blank"
-                                  class="external-link button is-normal is-rounded is-dark">
-                                      <span class="icon">
-                                          <i class="fas fa-vial"></i>
-                                      </span>
-                                      <span>HRVideoBench</span>
-                                  </a>
-                              </span>
                                 
                             </div>
                         </div>
@@ -162,7 +145,7 @@
           <div class="column is-four-fifths">
             <h1 class="title is-2">Abstract</h1>
             <div class="content has-text-justified">
-                            <p>Current large multimodal models (LMMs) face significant challenges in processing and comprehending long-duration or high-resolution videos, which is mainly due to the lack of high-quality datasets. To address this issue from a data-centric perspective, we propose VISTA, a simple yet effective VIdeo SpatioTemporal Augmentation framework that synthesizes long-duration and high-resolution video instruction-following pairs from existing video-caption datasets. VISTA spatially and temporally combines videos to create new synthetic videos with extended durations and enhanced resolutions, and subsequently produces question-answer pairs pertaining to these newly synthesized videos. Based on this paradigm, we develop seven video augmentation methods and curate VISTA-400K, a video instruction-following dataset aimed at enhancing long-duration and high-resolution video understanding. Finetuning various video LMMs on our data resulted in an average improvement of 3.3% across four challenging benchmarks for long-video understanding. Furthermore, we introduce the first comprehensive high-resolution video understanding benchmark HRVideoBench, on which our finetuned models achieve a 6.5% performance gain. These results highlight the effectiveness of our framework.</p>
+                            <p>State-of-the-art transformer-based large multimodal models (LMMs) struggle to handle hour-long video inputs due to the quadratic complexity of the causal self-attention operations, leading to high computational costs during training and inference. Existing token compression-based methods reduce the number of video tokens but often incur information loss and remain inefficient for extremely long sequences. In this paper, we explore an orthogonal direction to build a hybrid Mamba-Transformer model (VAMBA) that employs Mamba-2 blocks to encode video tokens with linear complexity. Without any token reduction, VAMBA can encode more than 1024 frames (640×360) on a single GPU, while transformer-based models can only encode 256 frames. On long video input, VAMBA achieves at least 50% reduction in GPU memory usage during training and inference, and nearly doubles the speed per training step compared to transformer-based LMMs. Our experimental results demonstrate that VAMBA improves accuracy by 4.6% on the challenging hour-long video understanding benchmark LVBench over prior efficient video LMMs, and maintains strong performance on a broad spectrum of long and short video understanding tasks.</p>
             </div>
           </div>
         </div>
@@ -179,7 +162,7 @@
                     <div class="column is-full">
                         <div class="item">
                             <!-- Your image here -->
-                            <img src="static/images/vista_teaser.png" alt="VISTA" style="width: 80%; display: block; margin-left: auto; margin-right: auto;"/>
+                            <img src="static/images/vamba_teaser.png" alt="VISTA" style="width: 70%; display: block; margin-left: auto; margin-right: auto;"/>
                         </div>
                     </div>
                 </div>
@@ -193,10 +176,13 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-            <h1 class="title is-1">VISTA</h1>
+            <h1 class="title is-1">Vamba</h1>
             <div class="content has-text-justified">
               <p>
-                VISTA leverages insights from image and video classification data augmentation techniques such as CutMix, MixUp and VideoMix, which demonstrate that training on synthetic data created by overlaying or mixing multiple images or videos results in more robust classifiers. Similarly, our method spatially and temporally combines videos to create (artificial) augmented video samples with longer durations and higher resolutions, followed by synthesizing instruction data based on these new videos. Our data synthesis pipeline utilizes existing public video-caption datasets, making it fully open-sourced and scalable. This allows us to construct VISTA-400K, a high-quality video instruction-following dataset aimed at improving the long and high-resolution video understanding capabilities of video LMMs.
+                To reduce the computational/memory cost for video LMMs, previous efforts have primarily focused on reducing the vision tokens in the input sequence. In this study, we investigate an orthogonal direction to previous approaches: instead of compressing the video tokens, we seek to develop an alternative model architecture that improves the efficiency of processing video tokens during training and pre-filling stage of inference. We propose Vamba, a hybrid Mamba-Transformer model for efficient hour-long video understanding. The key insight of our method is that we can design efficient modules to approximate the causal self-attention operation for both text and video tokens in transformer-based LMMs. In particular, we propose to (1) utilize cross-attentions to update text tokens based on video tokens, which is affordable due to the short length of text tokens, and (2) adopt Mamba-2 to process the massive video tokens with linear complexity.
+              </p>
+              <p>
+                The main computation overhead in the transformer-based LMMs comes from the <b>quadratic complexity of the self-attention in the video tokens</b>. To overcome this issue, we design a hybrid Mamba Transformer architecture to process text and video tokens differently. The key idea of our method is to split the expensive self-attention operation over the entire video and text token sequence into two more efficient components. Since video tokens typically dominate the sequence while text tokens remain few, we maintain the self-attention mechanism exclusively for the text tokens and eliminate it for the video tokens. Instead, we add cross-attention layers that use text tokens as queries and video tokens as keys and values. In the meantime, we propose to employ Mamba blocks to effectively process the video tokens.
               </p>
             </div>
           </div>
@@ -213,7 +199,7 @@
                     <div class="column is-full">
                         <div class="item">
                             <!-- Your image here -->
-                            <img src="static/images/vista_main.png" alt="VISTA" />
+                            <img src="static/images/vamba_main.png" alt="VISTA" />
 <!--                            <h2 class="subtitle">-->
 <!--                            </h2>-->
                         </div>
@@ -225,22 +211,20 @@
     <!-- End image carousel -->
 
 
-
     <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h1 class="title is-1">HRVideoBench</h1>
-            <div class="content has-text-justified">
-              <p>
-                We observe that existing video understanding benchmarks are inadequate for accurately assessing the ability of video LMMs to understand high-resolution videos, especially the details inside the videos. Prior benchmarks mainly consist of low-resolution videos. More recent benchmarks focus on evaluating the long video understanding capability of video LMMs, which contain questions that typically pertain to a short segment in the long video. As a result, a model's high-resolution video understanding performance can be undermined if it struggles to sample or retrieve the relevant frames from a lengthy video sequence.<br><br>
-                To address this gap, we introduce HRVideoBench, a comprehensive benchmark with 200 multiple-choice questions designed to assess video LMMs for high-resolution video understanding. HRVideoBench focuses on the perception and understanding of small regions and subtle actions in the video. Our test videos are at least 1080p and contain 10 different video types collected with real-world applications in mind. For example, key applications of high-resolution video understanding include autonomous driving and video surveillance. We correspondingly collect POV driving videos and CCTV footage for the benchmark. Our benchmark consists of 10 types of questions, all of which are manually annotated and can be broadly categorized into object and action-related tasks. Examples of HRVideoBench questions are shown in the figure below.
-              </p>
+        <div class="container is-max-desktop">
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-full">
+              <h1 class="title is-1">Runtime Efficiency</h1>
+                <div class="content has-text-justified">
+                <p>
+                  To understand our model’s runtime efficiency gains over the baseline transformer-based LMM (Qwen2-VL-7B), we conduct an efficiency analysis for both training and inference. Our results show that our model requires over 50% less training memory when processing videos with more than 16 frames. This efficiency gain allows us to handle a larger number of video frames during training (512 vs. 128). Furthermore, our efficient design also accelerates model training, achieving nearly twice the speedup per training step when working with more than 64 frames. For model inference, Vamba's memory usage increases more slowly as the frame increases, allowing it to handle four times as many frames on a single NVIDIA A800 80G GPU compared to Qwen2-VL-7B (256 vs. 1024). Regarding computational cost, Vamba reduces FLOPs by 30% to 50% during inference, demonstrating a significantly lower complexity than its transformer-based LMM counterparts.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
     <section class="hero">
         <div class="hero-body">
@@ -249,8 +233,7 @@
                     <div class="column is-full">
                         <div class="item">
                             <!-- Your image here -->
-                            <img src="static/images/hrvideobench_examples.png" alt="HRVideoBench" style="width: 100%; display: block; margin-left: auto; margin-right: auto;"/>
-                           <h2 class="subtitle" style="text-align: center;">Examples of HRVideoBench questions.</h2>
+                            <img src="static/images/vamba_efficiency.png" alt="HRVideoBench" style="width: 100%; display: block; margin-left: auto; margin-right: auto;"/>
                         </div>
                     </div>
                 </div>
@@ -264,10 +247,16 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-full">
-            <h1 class="title is-1">Finetuning Video LMMs on VISTA-400K</h1>
+            <h1 class="title is-1">Experimental Results</h1>
               <div class="content has-text-justified">
               <p>
-                To validate the effectiveness of VISTA-400K, we finetune a diverse set of LMMs on our dataset. Specifically, we choose VideoLLaVA, Mantis-Idefics2 and LongVA as the base models because these models disclose details about their training dataset. Our evaluation results on long and high-resolution video understanding benchmarks indicate that our dataset provides a consistent improvement across all models. Evaluation results on short video understanding benchmarks and open-ended video QA benchmarks also demonstrate that our dataset maintains the performance of video LMMs on a wide range of video understanding tasks. Finally, our ablation study results show that each subset in our dataset is essential for improving the performance of video LMMs, and disabling our proposed video augmentation method leads to a performance drop for both long and high-resolution video understanding tasks.
+                We conduct extensive evaluations across various video understanding tasks to demonstrate the effectiveness of Vamba.
+              </p>
+              <p>
+                <b>Hour-long Video Understanding:</b> Vamba consistently outperforms all efficient video LMMs across the three hour-long video benchmarks, highlighting its exceptional ability to understand and reason over hour-scale videos. Notably, our model surpasses the baseline Qwen2-VL-7B on the LVBench benchmark, and its performance on HourVideo is also very close to Qwen2-VL-7B. These results underscore that Vamba is competitive with the best open-sourced transformer-based LMMs, while being significantly more efficient during training and inference.
+              </p>
+              <p>
+                <b>Medium-Length or Short Video Understanding:</b> Vamba demonstrates superior performance across three medium-length video understanding benchmarks (with average video durations between 10–20 minutes), ranking first among efficient video LMMs on all metrics. Vamba also achieves competitive performances, ranking first on NExT-QA and DREAM-1K and second on MVBench among efficient LMMs. Overall, our model delivers the best results on medium-length and long video benchmarks, demonstrating its strong ability to handle long-context video-language inputs.
               </p>
             </div>
           </div>
@@ -283,13 +272,13 @@
                         <!-- <h2 class="title is-3">Top 5 Candidates Retrieved from M-BEIR</h2> -->
                         <div class="content has-text-justified">
                             <div class="buttonGroup"  data-target-display="#imageDisplayArea2" style="margin-bottom: 2em;">
-                                <button value="long_short" data-img-path="static/images/long_short.png">Long/Short Video Understanding Benchmark Results</button>
-                                <button value="hr_open" data-img-path="static/images/hr_open.png">HRVideoBench/Open-Ended Video QA Results</button>
+                                <button value="hour_long" data-img-path="static/images/hour_long.png" >Hour-long Video Understanding Results</button>
+                                <button value="others" data-img-path="static/images/others.png">Medium-Length or Short Video Understanding Results</button>
                                 <button value="case" data-img-path="static/images/case.png">Case Study</button>
                             </div>
 
                             <div id="imageDisplayArea2">
-                                <img id="displayedImage2" src="static/images/long_short.png" alt="long_short" />
+                                <img id="displayedImage2" src="static/images/hour_long.png" alt="hour_long" />
                             </div>
                     </div>
                 </div>
@@ -305,15 +294,7 @@
             <h2 class="title">Reference</h2>
             Please kindly cite our paper if you use our code, data, models or results:
             <br><br>
-            <pre><code>@misc{ren2024vistaenhancinglongdurationhighresolution,
-      title={VISTA: Enhancing Long-Duration and High-Resolution Video Understanding by Video Spatiotemporal Augmentation}, 
-      author={Weiming Ren and Huan Yang and Jie Min and Cong Wei and Wenhu Chen},
-      year={2024},
-      eprint={2412.00927},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2412.00927}, 
-}</code></pre>
+            <pre><code>coming soon</code></pre>
         </div>
     </section>
 
