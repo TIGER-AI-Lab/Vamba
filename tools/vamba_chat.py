@@ -104,7 +104,7 @@ class Vamba():
 
     
 if __name__ == "__main__":
-    model = Vamba(model_path="/map-vepfs/weiming/repos/lmm_cross_attn/output/instruction_tuning/qwen2_vl_ca_mamba2_mixer_alpha_cc12m_pixelprose_packed_lr1e-5_img120000_txt124000/qwen2_vl_ca_mamba2_mixer_alpha_all_packed_lr5e-6_img120000_txt124000/checkpoint-final")
+    model = Vamba(model_path="TIGER-Lab/Vamba-Qwen2-VL-7B")
     print("############################################################################################")
     test_input = [
         {
