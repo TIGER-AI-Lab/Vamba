@@ -14,9 +14,10 @@ pip install flash-attn --no-build-isolation
 ## Model Training
 1. Modify the data configuration files under `train/data_configs/` to point to the correct paths of the datasets. You should refer to [CC12M](https://huggingface.co/datasets/pixparse/cc12m-wds), [PixelProse](https://huggingface.co/datasets/tomg-group-umd/pixelprose), [LLaVA-OneVision-Data](https://huggingface.co/datasets/lmms-lab/LLaVA-OneVision-Data) and [LLaVA-Video-178K](https://huggingface.co/datasets/lmms-lab/LLaVA-Video-178K) for preparing the training datasets.
 2. Follow the commands below to train Vamba model:
-```
+```bash
 # pretraining
 bash scripts/pretrain_vamba.sh
+
 # instruction-tuning
 bash scripts/sft_vamba.sh
 ```
@@ -24,7 +25,9 @@ bash scripts/sft_vamba.sh
 ## Evaluation
 Use the scripts under `eval/` to evaluate Vamba models. For example, to evaluate Video-MME, use the command:
 ```
-python eval_videomme.py --model_type vamba --model_name_or_path TIGER-Lab/Vamba-Qwen2-VL-7B --num_frames 512 --data_dir <path_to_videomme_data>
+cd Vamba
+export PYTHONPATH=.
+python eval/eval_videomme.py --model_type vamba --model_name_or_path TIGER-Lab/Vamba-Qwen2-VL-7B --num_frames 512 --data_dir <path_to_videomme_data>
 ```
 
 ## Vamba Model Architecture
