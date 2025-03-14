@@ -1,11 +1,12 @@
 # Vamba
 
 This repo contains code for [Vamba](https://arxiv.org/abs/TODO), a hybrid Mamba-Transformer model that leverages cross-attention layers and Mamba-2 blocks for efficient hour-long video understanding.
+
 [**🌐 Homepage**](https://tiger-ai-lab.github.io/Vamba/) | [**📖 arXiv**](https://arxiv.org/abs/TODO) | [**💻 GitHub**](https://github.com/TIGER-AI-Lab/Vamba) | [**🤗 Model**](TIGER-Lab/Vamba-Qwen2-VL-7B)
 
 ## Install
 Please use the following commands to install the required packages:
-```
+```bash
 conda env create -f environment.yaml
 conda activate vamba
 pip install flash-attn --no-build-isolation
