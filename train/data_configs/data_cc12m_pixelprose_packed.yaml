@@ -1,0 +1,11 @@
+data:
+  - 
+    name: cc12m_pixelprose
+    format: caption_packed
+    split: train
+    json_path: <path to pixelprose annotation>
+    data_path: <path to cc12m images>
+    dataset_type: image
+    img_do_resize: False
+    pack_size: 8
+    shuffle: True

@@ -1,0 +1,65 @@
+data:
+  - # image data, llava-onevision
+    data_path: <path to llava-onevision images>
+    dataset_type: image
+    format: conversation_packed
+    pack_size: 8
+    img_do_resize: false
+    img_longest_edge: 1920
+    img_shortest_edge: 128
+    json_path: <path to combined llava-onevision annotations>
+    name: llava_onevision
+    shuffle: true
+    split: train
+  -
+    data_path: /path/to/LLaVA-Video-178K
+    dataset_type: video
+    format: conversation
+    img_do_resize: false
+    img_longest_edge: 1280
+    img_shortest_edge: 128
+    json_path: /path/to/train_json/activitynetqa_processed.json
+    name: activitynet_qa
+    video_sample_type: middle
+    video_num_frames: auto
+    shuffle: true
+    split: train
+  -
+    data_path: /path/to/LLaVA-Video-178K
+    dataset_type: video
+    format: conversation
+    img_do_resize: false
+    img_longest_edge: 1280
+    img_shortest_edge: 128
+    json_path: /path/to/train_json/nextqa_processed.json
+    name: next_qa
+    video_sample_type: middle
+    video_num_frames: auto
+    shuffle: true
+    split: train
+  -
+    data_path: /path/to/LLaVA-Video-178K
+    dataset_type: video
+    format: conversation
+    img_do_resize: false
+    img_longest_edge: 1280
+    img_shortest_edge: 128
+    json_path: /path/to/train_json/perceptiontest_processed.json
+    name: perceptiontest
+    video_sample_type: middle
+    video_num_frames: auto
+    shuffle: true
+    split: train
+  -
+    data_path: /path/to/LLaVA-Video-178K
+    dataset_type: video
+    format: llava_video_packed
+    img_do_resize: false
+    img_longest_edge: 1280
+    img_shortest_edge: 128
+    json_path: /path/to/train_json/llava_video_178k_all_data_packed.json
+    name: llava_video_178k_all
+    video_sample_type: middle
+    video_num_frames: auto
+    shuffle: true
+    split: train
