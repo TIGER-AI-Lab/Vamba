@@ -32,7 +32,7 @@ bash scripts/sft_vamba.sh
 
 ## Evaluation
 Use the scripts under `eval/` to evaluate Vamba models. For example, to evaluate Video-MME, use the command:
-```
+```bash
 cd Vamba
 export PYTHONPATH=.
 python eval/eval_videomme.py --model_type vamba --model_name_or_path TIGER-Lab/Vamba-Qwen2-VL-7B --num_frames 512 --data_dir <path_to_videomme_data>
