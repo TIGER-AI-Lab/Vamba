@@ -11,6 +11,13 @@ conda env create -f environment.yaml
 conda activate vamba
 pip install flash-attn --no-build-isolation
 ```
+## Model Inference
+```bash
+cd Vamba
+export PYTHONPATH=.
+python tools/vamba_chat.py
+```
+
 
 ## Model Training
 1. Modify the data configuration files under `train/data_configs/` to point to the correct paths of the datasets. You should refer to [CC12M](https://huggingface.co/datasets/pixparse/cc12m-wds), [PixelProse](https://huggingface.co/datasets/tomg-group-umd/pixelprose), [LLaVA-OneVision-Data](https://huggingface.co/datasets/lmms-lab/LLaVA-OneVision-Data) and [LLaVA-Video-178K](https://huggingface.co/datasets/lmms-lab/LLaVA-Video-178K) for preparing the training datasets.
