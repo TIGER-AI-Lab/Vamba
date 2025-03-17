@@ -2,7 +2,7 @@
 
 This repo contains code for [Vamba](https://arxiv.org/abs/TODO), a hybrid Mamba-Transformer model that leverages cross-attention layers and Mamba-2 blocks for efficient hour-long video understanding.
 
-[**🌐 Homepage**](https://tiger-ai-lab.github.io/Vamba/) | [**📖 arXiv**](https://arxiv.org/abs/TODO) | [**💻 GitHub**](https://github.com/TIGER-AI-Lab/Vamba) | [**🤗 Model**](https://huggingface.co/TIGER-Lab/Vamba-Qwen2-VL-7B)
+[**🌐 Homepage**](https://tiger-ai-lab.github.io/Vamba/) | [**📖 arXiv**](https://arxiv.org/abs/2503.11579) | [**💻 GitHub**](https://github.com/TIGER-AI-Lab/Vamba) | [**🤗 Model**](https://huggingface.co/TIGER-Lab/Vamba-Qwen2-VL-7B)
 
 ## Install
 Please use the following commands to install the required packages:
@@ -50,5 +50,13 @@ The main computation overhead in the transformer-based LMMs comes from the quadr
 ## Citation
 If you find our paper useful, please cite us with
 ```
-coming soon
+@misc{ren2025vambaunderstandinghourlongvideos,
+      title={Vamba: Understanding Hour-Long Videos with Hybrid Mamba-Transformers}, 
+      author={Weiming Ren and Wentao Ma and Huan Yang and Cong Wei and Ge Zhang and Wenhu Chen},
+      year={2025},
+      eprint={2503.11579},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2503.11579}, 
+}
 ```
