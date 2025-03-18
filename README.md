@@ -12,12 +12,43 @@ conda activate vamba
 pip install flash-attn --no-build-isolation
 ```
 ## Model Inference
-```bash
-cd Vamba
-export PYTHONPATH=.
-python tools/vamba_chat.py
-```
+```python
+# git clone https://github.com/TIGER-AI-Lab/Vamba
+# cd Vamba
+# export PYTHONPATH=.
+from tools.vamba_chat import Vamba
+model = Vamba(model_path="TIGER-Lab/Vamba-Qwen2-VL-7B", device="cuda")
+test_input = [
+    {
+        "type": "video",
+        "content": "assets/magic.mp4",
+        "metadata": {
+            "video_num_frames": 128,
+            "video_sample_type": "middle",
+            "img_longest_edge": 640,
+            "img_shortest_edge": 256,
+        }
+    },
+    {
+        "type": "text",
+        "content": "<video> Describe the magic trick."
+    }
+]
+print(model(test_input))
 
+test_input = [
+    {
+        "type": "image",
+        "content": "assets/old_man.png",
+        "metadata": {}
+    },
+    {
+        "type": "text",
+        "content": "<image> Describe this image."
+    }
+]
+print(model(test_input))
+```
 
 ## Model Training
 1. Modify the data configuration files under `train/data_configs/` to point to the correct paths of the datasets. You should refer to [CC12M](https://huggingface.co/datasets/pixparse/cc12m-wds), [PixelProse](https://huggingface.co/datasets/tomg-group-umd/pixelprose), [LLaVA-OneVision-Data](https://huggingface.co/datasets/lmms-lab/LLaVA-OneVision-Data) and [LLaVA-Video-178K](https://huggingface.co/datasets/lmms-lab/LLaVA-Video-178K) for preparing the training datasets.
